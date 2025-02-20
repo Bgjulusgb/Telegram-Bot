@@ -1,0 +1,19 @@
+FROM python:3.9-slim
+
+WORKDIR /app
+
+# Installiere Abhängigkeiten
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Erstelle das NLTK-Datenverzeichnis
+RUN mkdir -p /tmp/nltk_data
+
+# Kopiere den Anwendungscode
+COPY . .
+
+# Setze das NLTK-Datenverzeichnis
+ENV NLTK_DATA=/tmp/nltk_data
+
+# Führe die Anwendung aus
+CMD ["python", "app.py"]

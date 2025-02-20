@@ -1,0 +1,9 @@
+setuptools
+wheel
+aiohttp
+python-dotenv
+python-telegram-bot
+sumy
+nltk
+tenacity
+python-dateutil
